@@ -1119,8 +1119,8 @@ EOF
 
 EOF
 
-          if [[ $VMESS_PORT$VLESS_PORT$REALITY_PORT$HYSTERIA2_PORT$TUIC_PORT =~ [0-9]+ ]]; then
-            grep -q '.' <<< $ARGO_ARGS && cat >> docker-compose.yml << EOF
+          # if [[ $VMESS_PORT$VLESS_PORT$REALITY_PORT$HYSTERIA2_PORT$TUIC_PORT =~ [0-9]+ ]]; then
+          grep -q '.' <<< $ARGO_ARGS && cat >> docker-compose.yml << EOF
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
@@ -1158,7 +1158,7 @@ EOF
     restart: unless-stopped
 
 EOF
-          fi
+          # fi
 
           grep -q '.' <<< $NEZHA_SERVER && cat >> docker-compose.yml << EOF
   nezha-agent:
